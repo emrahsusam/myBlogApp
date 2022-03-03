@@ -1,0 +1,41 @@
+<%- include ('../partials/header.ejs') %>
+
+<!-- Page Header-->
+        <header class="masthead" style="background-image: url('https://cdn.pixabay.com/photo/2022/01/12/18/51/contact-us-6933645_960_720.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Admin Dashboard</h1>        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <% adminActions.forEach(   (action)=>{ %>
+             
+         
+            <div class="row">
+                <div class="col-lg-4 col-md-2 mx-auto">
+                    <button id="<%= action.actionId %>" onclick="catchID(this.id)" type="button" class="btn btn-outline-primary btn-block float-left"><%= action.displayName %></button>
+                </div>
+              
+            </div>
+                </div>
+                <%  }); %>
+    
+        </div>
+
+        <script>
+            function catchID(clicked_id){
+                alert(clicked_id + " numarali butona tiklandi.");
+                if(clicked_id==1){
+                    window.location.href='changeHomeImage' ; return false;
+                }
+            }
+        </script>
+
+<%- include ('../partials/footer.ejs') %>
